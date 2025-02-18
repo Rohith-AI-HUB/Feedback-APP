@@ -1,1 +1,3 @@
-# Feedback-APP
+<<<<<<< HEAD
+=======
+>>>>>>> caed720 (Initialize project using Create React App)
