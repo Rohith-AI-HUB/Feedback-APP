@@ -5,8 +5,6 @@ Feedback App is a full-stack web application that allows users to submit and man
 
 ## Live Demo
 - https://feedback-app-frontend-ruby.vercel.app
-- https://feedback-app-backend-hcmv.onrender.com
-
 ---
 
 ## Features
@@ -110,7 +108,4 @@ MONGO_URI=<your_mongodb_uri>
 5. Create a Pull Request.
 
 ---
-
-## License
-This project is licensed under the MIT License.
 
