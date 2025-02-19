@@ -9,7 +9,7 @@ const app = express();
 
 // ✅ Fix CORS - Allow requests from frontend
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://feedback-app-frontend-izsr.vercel.app'], // Allow Vercel frontend
+  origin: ['http://localhost:3000', 'https://feedback-app-backend-hcmv.onrender.com'], // Allow Vercel frontend
   methods: 'GET,POST',
   allowedHeaders: 'Content-Type'
 }));
