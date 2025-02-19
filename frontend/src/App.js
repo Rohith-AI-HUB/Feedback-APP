@@ -10,7 +10,7 @@ function App() {
 
   const [errors, setErrors] = useState({});
   const [feedbackList, setFeedbackList] = useState([]);
-  const [successMessage, setSuccessMessage] = useState(""); // ✅ Success message state
+  const [successMessage, setSuccessMessage] = useState(""); 
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   const fetchFeedback = useCallback(async () => {
-    setLoading(true); // Start loading
+    setLoading(true); 
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/feedback`);
       const data = await response.json();
@@ -26,14 +26,14 @@ function App() {
     } catch (error) {
       console.error("Error fetching feedback:", error);
     }
-    setLoading(false); // Stop loading
+    setLoading(false); 
   }, []);
 
   useEffect(() => {
     fetchFeedback();
   }, [fetchFeedback]);
 
-  // Validation function
+
   const validate = (field, value) => {
     let error = "";
 
@@ -64,7 +64,7 @@ function App() {
     return error;
   };
 
-  // Handle input changes and revalidate
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -79,7 +79,7 @@ function App() {
     });
   };
 
-  // Handle form submission
+
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -129,7 +129,7 @@ function App() {
     <div className="App">
       <h1>Feedback Application</h1>
 
-      {/* ✅ Display Success Message */}
+      {/* Display Success Message */}
       {successMessage && <p className="success-message">{successMessage}</p>}
 
       <form onSubmit={handleSubmit} className="feedback-form">
