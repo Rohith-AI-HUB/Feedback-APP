@@ -98,7 +98,6 @@ REACT_APP_API_URL=http://localhost:5000  # Update after backend deployment
 ```
 PORT=5000
 MONGO_URI=<your_mongodb_uri>
-JWT_SECRET=<your_secret_key>
 ```
 
 ---
