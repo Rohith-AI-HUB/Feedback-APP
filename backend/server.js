@@ -3,23 +3,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config(); // Load environment variables
-
-// Create an instance of Express
 const app = express();
 
-// ✅ Fix CORS - Allow requests from frontend
+// Fix CORS - Allow requests from frontend
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://feedback-app-backend-hcmv.onrender.com'], // Allow Vercel frontend
+  origin: ['http://localhost:3000', 'https://feedback-app-backend-hcmv.onrender.com'], 
   methods: 'GET,POST',
   allowedHeaders: 'Content-Type'
 }));
 
-
-
-// Middleware to parse JSON
 app.use(express.json());
 
-// ✅ Connect to MongoDB using .env
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -27,7 +21,7 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log("✅ MongoDB Connected"))
 .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
-// ✅ Define Feedback Schema & Model
+// Define Feedback Schema & Model
 const feedbackSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
@@ -36,7 +30,7 @@ const feedbackSchema = new mongoose.Schema({
 });
 const Feedback = mongoose.model('Feedback', feedbackSchema);
 
-// ✅ POST /feedback - Store feedback in database
+// POST /feedback - Store feedback in database
 app.post('/feedback', async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -56,7 +50,7 @@ app.post('/feedback', async (req, res) => {
 });
 
 
-// ✅ GET /feedback - Retrieve all submitted feedback
+// GET /feedback - Retrieve all submitted feedback
 app.get('/feedback', async (req, res) => {
   try {
     const feedbackList = await Feedback.find().sort({ timestamp: -1 });
@@ -66,6 +60,5 @@ app.get('/feedback', async (req, res) => {
   }
 });
 
-// ✅ Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
