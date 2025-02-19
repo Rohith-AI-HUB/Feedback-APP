@@ -1,99 +1,116 @@
-# Feedback-App
+# Feedback App
 
-Feedback-App is a full-stack web application that allows users to submit feedback and enables administrators to manage it efficiently. The project is built using React for the frontend and Node.js with Express for the backend.
+## Overview
+Feedback App is a full-stack web application that allows users to submit and manage feedback. The frontend is built with React and hosted on Vercel, while the backend is powered by Node.js/Express and hosted on Render.
 
-# Features:
+## Live Demo
 
-Users can submit feedback.
-Admins can view and manage feedback.
-Secure authentication system.
-Responsive user interface for seamless user experience.
 
-# Project Structure:
+---
 
-Feedback-app/
-├── frontend/       
-│   ├── src/        
-│   ├── public/     
-│   ├── package.json
-│   ├── .gitignore  
-│
-├── backend/        
-│   ├── src/        
-│   ├── controllers/  
-│   ├── models/      
-│   ├── routes/      
-│   ├── package.json  
-│   ├── server.js    
+## Features
+- User-friendly interface for submitting feedback.
+- Backend API for managing feedback data.
+- Authentication and authorization.
+- Responsive design for mobile and desktop.
 
-# Technology Stack:
+---
 
-Frontend (React):
+## Tech Stack
+### Frontend
+- React
+- React Router
+- Hosted on **Vercel**
 
-React.js
-React Router for navigation
-Axios for API communication
-State management with Context API or Redux
-CSS Framework
+### Backend
+- Node.js with Express
+- MongoDB
+- Hosted on **Render**
 
-Backend (Node.js & Express):
+---
 
-Node.js and Express.js for API development
-MongoDB for database management
-Mongoose (for MongoDB)
+## Local Development Setup
 
-# Setup & Installation:
+### Prerequisites
+- Node.js (>= 14)
+- npm
+- MongoDB
 
-# Clone the Repository
+### Clone the Repository
+```sh
+ git clone https://github.com/Rohith-AI-HUB/Feedback-APP.git
+ cd Feedback-APP
+```
 
-git clone https://github.com/Rohith-AI-HUB/Feedback-APP.git
-cd Feedback-APP
+### Setting Up the Frontend
+```sh
+ cd frontend
+ npm install  
+ npm start    # Runs the React app on localhost:3000
+```
 
-# Install Dependencies
+### Setting Up the Backend
+```sh
+ cd backend
+ npm install  
+ npm start    # Runs the backend server on localhost:5000
+```
 
-Install frontend dependencies
-cd frontend
-npm install
+---
 
-Install backend dependencies
-cd ../backend
-npm install
+## Deployment Instructions
 
-# Configure Environment Variables
-Create a .env file inside the backend/ directory and add the following variables:
+### Deploying Frontend on Vercel
+1. Install Vercel CLI (if not installed):
+   ```sh
+   npm install -g vercel
+   ```
+2. Login to Vercel:
+   ```sh
+   vercel login
+   ```
+3. Deploy the frontend:
+   ```sh
+   cd frontend
+   vercel
+   ```
+4. Copy the live link and update the **Live Demo** section.
 
+### Deploying Backend on Render
+1. Go to [Render](https://render.com/).
+2. Create a new **Web Service**.
+3. Connect the GitHub repository.
+4. Set environment variables (if applicable).
+5. Deploy the backend and update the API URL in the frontend.
+
+---
+
+## Environment Variables
+Create a `.env` file in both `frontend/` and `backend/` with the required variables:
+
+### Frontend `.env`
+```
+REACT_APP_API_URL=http://localhost:5000  # Update after backend deployment
+```
+
+### Backend `.env`
+```
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=<your_mongodb_uri>
+JWT_SECRET=<your_secret_key>
+```
 
-# Run the Application:
+---
 
-Start the backend server
-cd backend
-npm start
+## Contributing
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature-branch`
+3. Commit changes: `git commit -m "Added new feature"`
+4. Push to the branch: `git push origin feature-branch`
+5. Create a Pull Request.
 
-Start the frontend
-cd ../frontend
-npm start
+---
 
-# API Endpoints:
+## License
+This project is licensed under the MIT License.
 
-User Feedback Management
-Method	Endpoint	Description
-GET	/api/feedback	Retrieve all feedback
-POST	/api/feedback	Submit new feedback
-DELETE	/api/feedback/:id	Delete specific feedback
-
-# Contributing
-If you want to contribute to this project:
-
-Fork the repository.
-Create a new branch: git checkout -b feature-branch
-Make your changes and commit them: git commit -m "Your message"
-Push to the branch: git push origin feature-branch
-Open a pull request.
-
-# License
-This project is licensed under the MIT License. You are free to use, modify, and distribute it.
-
-# Contact
-For any issues or feature requests, please open a GitHub issue.
