@@ -4,8 +4,8 @@
 Feedback App is a full-stack web application that allows users to submit and manage feedback. The frontend is built with React and hosted on Vercel, while the backend is powered by Node.js/Express and hosted on Render.
 
 ## Live Demo
-https://feedback-app-frontend-ruby.vercel.app
-https://feedback-app-backend-hcmv.onrender.com
+- https://feedback-app-frontend-ruby.vercel.app
+- https://feedback-app-backend-hcmv.onrender.com
 
 ---
 
